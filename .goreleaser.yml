@@ -1,0 +1,28 @@
+builds:
+  - binary: toolbox
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=vendor
+release:
+  prerelease: auto
+universal_binaries:
+  - replace: true
+brews:
+  - 
+    name: toolbox
+    homepage: https://github.com/shivadharmi/toolbox
+    tap:
+      owner: shivadharmi
+      name: homebrew-shivadharmi
+    commit_author:
+      name: Siva Sankar Reddy Bogala
+      email: shivadharmi@gmail.com
+checksum:
+  name_template: 'checksums.txt'
